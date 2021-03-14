@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.facetest.mapper.User2Mapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,name
+    </sql>
+
+
+    <insert id="insert" parameterType="com.learn.facetest.model.User2">
+        INSERT INTO user2
+        (name)
+        VALUES
+            (#{name})
+
+    </insert>
+
+
+
+    <!--根据主键查询 词条-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultType="com.learn.facetest.model.User2">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user2
+        WHERE
+        id  = #{id}
+    </select>
+
+
+
+</mapper>
